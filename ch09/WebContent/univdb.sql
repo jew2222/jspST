@@ -1,3 +1,5 @@
+--create database univdb;--
+
 create table student (
 	id		varchar(20) NOT NULL,
 	passwd  varchar(20) NOT NULL,

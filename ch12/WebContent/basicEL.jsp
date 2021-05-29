@@ -44,7 +44,7 @@
 	  </tr>
 	  <tr>
 	    <td>\${3 div 4}</td>
-	    <td>${3 div 4}</td>
+	     <td>${3 div 4}</td>
 	  </tr>
 	  <tr>
 	    <td>\${3 / 0}</td>
