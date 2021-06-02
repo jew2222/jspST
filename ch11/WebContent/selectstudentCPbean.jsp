@@ -2,11 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>데이터베이스 자바 빈즈 예제 : CP 이용</title>
+
+<title>데이터베이스   ,   자바 빈즈 예제 :, CP 이용</title>
 </head>
 <body>
 
-<%@ page import="java.util.ArrayList, univ.StudentEntity" %>
+<%@ page import="java.util.ArrayList, univ.StudentEntity" %> 
 
 <h2> 자바 빈즈 StudentDatabaseCP를 이용한 테이블 student 조회 프로그램 </h2>
 <hr><center>
@@ -15,6 +16,8 @@
 	<jsp:useBean id="stdtdb" class="univ.StudentDatabaseCP" scope="page" />
 <%
 	ArrayList<StudentEntity> list = stdtdb.getStudentList();
+
+
 	int counter = list.size();
 	if (counter > 0) {
 %>

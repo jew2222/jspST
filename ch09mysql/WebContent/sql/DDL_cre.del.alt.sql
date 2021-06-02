@@ -20,4 +20,4 @@ drop table student;
 
 --DDL - ¼öÁ¤¾î
 
-ALter
+ALter table T rename t; 

@@ -27,10 +27,11 @@ insert into student (id, name, passwd) values ('kkk','nnn',1234),;;
 -- 수정
 
 update alter
+update T set col="값" WHERE col2 = '값3'
 --제거
 
 
-delete
+delete from T;
 
 /*주석
  * v는  변수 

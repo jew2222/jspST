@@ -1,7 +1,8 @@
 package univ;
 
-public class StudentEntity {
+public class StudentEntity { //자바빈즈  DB 레코드 처리를 위한 
 	
+	// 테이블 필드들 선언
 	private String id;
 	private String passwd;
 	private String name;
@@ -13,6 +14,8 @@ public class StudentEntity {
 	private String address;
 	private String email;
 	
+	
+	//2. 겟터와 셋터 생성
 	public String getId() {
 		return id;
 	}

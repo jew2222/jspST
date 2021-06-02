@@ -7,6 +7,7 @@
 <title>Jakarta DBCP</title>
 </head>
 <body>
+<%--디비씨피 이용 위해 웹과 서버 xml 에 수정 필요  --%>>
 
 <%@ page import="java.sql.*, javax.sql.*, javax.naming.*" %> <%--1. 자바엑스,네이밍  임포트 --%>
 
@@ -20,13 +21,13 @@ try {
     
 	/*
     Context initCtx = new InitialContext();    
-    Context env = (Context) initCtx.lookup("java:comp/env/");    
-    DataSource ds = (DataSource) env.lookup("jdbc/mysql");
+    Context env = (Context) initCtx.lookup("java:comp/env/");  //env 까지만 받고  
+    DataSource ds = (DataSource) env.lookup("jdbc/mysql");  //그걸로 마이애스큐앨 받을 수도 있
     Connection con = ds.getConnection();
 	*/
 	
     out.println("MySql 데이터베이스 univdb에 성공적으로 접속했습니다");
-    con.close();
+    con.close();  //5. 커넥션 닫기 
     
 } catch (Exception e) {
 	out.println("MySql 데이터베이스 univdb 접속에 문제가 있습니다. <hr>");

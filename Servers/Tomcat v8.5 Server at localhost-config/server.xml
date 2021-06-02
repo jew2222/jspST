@@ -153,7 +153,24 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="lec12" path="/lec12" reloadable="true" source="org.eclipse.jst.jee.server:lec12"/><Context docBase="ch09mysql" path="/ch09mysql" reloadable="true" source="org.eclipse.jst.jee.server:ch09mysql"/><Context docBase="firsr0528" path="/firsr0528" reloadable="true" source="org.eclipse.jst.jee.server:firsr0528"/><Context docBase="ch04" path="/ch04" reloadable="true" source="org.eclipse.jst.jee.server:ch04"/><Context docBase="ch06" path="/ch06" reloadable="true" source="org.eclipse.jst.jee.server:ch06"/><Context docBase="ch08" path="/ch08" reloadable="true" source="org.eclipse.jst.jee.server:ch08"/><Context docBase="ch11" path="/ch11" reloadable="true" source="org.eclipse.jst.jee.server:ch11"/><Context docBase="ch13" path="/ch13" reloadable="true" source="org.eclipse.jst.jee.server:ch13"/><Context docBase="ch15" path="/ch15" reloadable="true" source="org.eclipse.jst.jee.server:ch15"/><Context docBase="ch17" path="/ch17" reloadable="true" source="org.eclipse.jst.jee.server:ch17"/><Context docBase="dwproject" path="/dwproject" reloadable="true" source="org.eclipse.jst.jee.server:dwproject"/><Context docBase="ch01" path="/ch01" reloadable="true" source="org.eclipse.jst.jee.server:ch01"/><Context docBase="ch03" path="/ch03" reloadable="true" source="org.eclipse.jst.jee.server:ch03"/><Context docBase="ch05" path="/ch05" reloadable="true" source="org.eclipse.jst.jee.server:ch05"/><Context docBase="ch07" path="/ch07" reloadable="true" source="org.eclipse.jst.jee.server:ch07"/><Context docBase="ch10" path="/ch10" reloadable="true" source="org.eclipse.jst.jee.server:ch10"/><Context docBase="ch12" path="/ch12" reloadable="true" source="org.eclipse.jst.jee.server:ch12"/><Context docBase="ch14" path="/ch14" reloadable="true" source="org.eclipse.jst.jee.server:ch14"/><Context docBase="ch18" path="/ch18" reloadable="true" source="org.eclipse.jst.jee.server:ch18"/></Host>
+      <Context docBase="lec12" path="/lec12" reloadable="true" source="org.eclipse.jst.jee.server:lec12">
+       <!-- DBCP : 원하는 프로젝트 컨첵스트를 찾아가서  /> 아닌 > 로 닫고,  리소스 엘리먼틀 넣고 </Context> -->
+       
+       
+      <Resource name="jdbc/mysql" auth="Container" type="javax.sql.DataSource"
+      maxActive="100" maxIdle="30" maxWait="10000"
+      username="root" password="sushu" driverClassName="com.mysql.jdbc.Driver"  
+      url="jdbc:mysql://localhost:3306/lecdb?serverTimezone=UTC"/>  <!-- 패스워드  바꿔 주기  -->    <!-- db명 바꿔 주기  -->  
+      </Context>
+  
+   <!-- DBCP  server.xml 에서 만들고      사용하겠단 의사 는 web.xml에서  명시ㅣ  전체 프로젝트에서 접근할 수 있도록 서버 밑에-->
+      
+      
+ 
+ 
+  </Host>
+  
+  
     </Engine>
   </Service>
 </Server>

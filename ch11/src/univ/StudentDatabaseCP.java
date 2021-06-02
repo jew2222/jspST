@@ -16,8 +16,10 @@ public class StudentDatabaseCP {
 	// 등록한 DBCP 데이터소스 찾아 저장하는 생성자
 	public StudentDatabaseCP() {
 		try {
-			InitialContext ctx = new InitialContext();
-			ds = (DataSource) ctx.lookup("java:comp/env/jdbc/mysql");
+			InitialContext ctx = new InitialContext();   ////// 클래스 포 네임 아닌 ///////////
+			ds = (DataSource) ctx.lookup("java:comp/env/jdbc/mysql");  //////////드라이버 아닌 데이터소스////////////
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		
@@ -37,6 +39,7 @@ public class StudentDatabaseCP {
 		if(pstmt != null) {
 			try {
 				pstmt.close();
+				
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -44,6 +47,7 @@ public class StudentDatabaseCP {
 		if(con != null) {
 			try {
 				con.close();
+				
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -51,18 +55,25 @@ public class StudentDatabaseCP {
 	}
 
 	// 게시판의 모든 레코드를 반환하는 메소드
-	public ArrayList<StudentEntity> getStudentList() {	
+	public ArrayList<StudentEntity> getStudentList() {	 
+		
+		
 		connect();
+		
+		
 		ArrayList<StudentEntity> list = new ArrayList<StudentEntity>();
 
 		String SQL = "select * from student";
 		try {
-			pstmt = con.prepareStatement(SQL);
+			
+			pstmt = con.prepareStatement(SQL); // 프리페어는 구문을 생성자에 넣고 
 			ResultSet rs = pstmt.executeQuery();
 
 			while (rs.next()) {
+				
 				//한 행의 학생정보를 저장할 학생을 위한 빈즈 객체 생성  
 				StudentEntity stu = new StudentEntity();
+				
 				//한 행의 학생정보를 자바 빈즈 객체에 저장  				
 				stu.setId ( rs.getString("id") );
 				stu.setPasswd ( rs.getString("passwd") );
@@ -74,6 +85,8 @@ public class StudentDatabaseCP {
 				stu.setMobile2 ( rs.getString("mobile2") );
 				stu.setAddress ( rs.getString("address") );
 				stu.setEmail ( rs.getString("email") );
+				
+				
 				//리스트에 추가
 				list.add(stu);
 			}
