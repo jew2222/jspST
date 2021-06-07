@@ -9,12 +9,13 @@
 </head>
 <body>
 <%@ page import= "java.util.ArrayList, lec.CompanyEntity" %>
+
 <jsp:useBean id="codb" class="lec.DatabaseDBCPbean" scope="page"/>
 
 <h3>회사</h3>
 
 <%
-   ArrayList<CompanyEntity> list = codb.getCompanyList();
+   ArrayList<CompanyEntity> list = codb.getCompanyList();  //데이터베이스 클래스를 통해 리스트 얻기
 
 int count = list.size();
 if (count > 0){

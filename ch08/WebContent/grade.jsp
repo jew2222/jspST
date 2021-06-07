@@ -14,7 +14,7 @@
 	<h3>폼에서 전달받은 이름과 성적을 JavaBeans GradeBean에 저장</h3><p>
 	이름 : <%= request.getParameter("name") %>, 
 	성적 : <%= request.getParameter("point") %><p>
-	<jsp:setProperty name="score" property="name" param="name" /> 
+	<jsp:setProperty name="score" property="name" param="name" /> <!--파람이 위에서 받은값 의미 , 프롭속성은 클래스에서 변수-->
 	<jsp:setProperty name="score" property="point" param="point" /> 
 
 	<HR>

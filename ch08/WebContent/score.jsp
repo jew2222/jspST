@@ -13,7 +13,7 @@
 	<h3>捞抚苞 己利阑 JavaBeans ScoreBean俊 历厘</h3><p>
 	捞抚 : <%= "辫己刮"%>, 
 	己利 : <%= "85" %><p>
-	<jsp:setProperty name="score" property="name" value="辫己刮"/> 
+	<jsp:setProperty name="score" property="name" value="辫己刮"/> <!-- 老馆利栏肺 闺风肺  -->
 	<jsp:setProperty name="score" property="point" value="85"/> 
 
 	<HR>

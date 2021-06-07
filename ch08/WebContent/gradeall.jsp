@@ -14,7 +14,7 @@
 	<h3>폼에서 전달받은 이름과 성적을 JavaBeans GradeBean에 저장</h3><p>
 	이름 : <%= request.getParameter("name") %>, 
 	성적 : <%= request.getParameter("point") %><p>
-	<jsp:setProperty name="score" property="*" /> 
+	<jsp:setProperty name="score" property="*" /> <!--전부 같은경우-->
 
 	<HR>
 	<h3>JavaBeans GradeBean에 저장된 정보를 조회 출력</h3><p>

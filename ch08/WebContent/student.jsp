@@ -2,28 +2,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>JSP ¿¹Á¦ stdudent.jsp</title>
+<title>JSP ì˜ˆì œ stdudent.jsp</title>
 </head>
 <body>
 
-	<h2>JavaBean StudentBeanÀ» ÀÌ¿ëÇÑ ¿¹Á¦</h2>
+	<h2>JavaBean StudentBeanì„ ì´ìš©í•œ ì˜ˆì œ</h2>
 
 	<% request.setCharacterEncoding("euc-kr"); %>
 	<jsp:useBean id="student" class="javabean.StudentBean" scope="page" />
 
 	<hr>
-	<h3>Æû¿¡¼­ Àü´Ş¹ŞÀº ÇĞ»ıÁ¤º¸¸¦ ±×´ë·Î ÀÚ¹Ùºó StudentBean¿¡ ÀúÀå</h3><p>
-	<jsp:setProperty name="student" property="*" /> 
+	<h3>í¼ì—ì„œ ì „ë‹¬ë°›ì€ í•™ìƒì •ë³´ë¥¼ ê·¸ëŒ€ë¡œ ìë°”ë¹ˆ StudentBeanì— ì €ì¥</h3><p>
+	<jsp:setProperty name="student" property="*" /> <!-- -ëª¨ë‘ ê°™ì„ë–„ -->
 
 	<hr>
-	<h3>JavaBean StudentBean¿¡ ÀúÀåµÈ Á¤º¸¸¦ Á¶È¸ Ãâ·Â</h3><p>
+	<h3>JavaBean StudentBeanì— ì €ì¥ëœ ì •ë³´ë¥¼ ì¡°íšŒ ì¶œë ¥</h3><p>
 
-	ÇĞ»ı  ID : <jsp:getProperty name="student"  property="id" /><br>
-	ÇĞ»ı ÀÌ¸§ : <jsp:getProperty name="student" property="name" /><br>
-	ÇĞ»ı ¹øÈ£ : <jsp:getProperty name="student" property="snum" /><br>
-           ³ªÀÌ(»ı³â) : <%=student.getAge() %>(<jsp:getProperty name="student" property="year" />)<br>
-	¾ÏÈ£ : <jsp:getProperty name="student" property="pass" /><br>
-	ÀüÀÚ¸ŞÀÏ : <jsp:getProperty name="student" property="email" /><br>
+	í•™ìƒ  ID : <jsp:getProperty name="student"  property="id" /><br>
+	í•™ìƒ ì´ë¦„ : <jsp:getProperty name="student" property="name" /><br>
+	í•™ìƒ ë²ˆí˜¸ : <jsp:getProperty name="student" property="snum" /><br>
+    ë‚˜ì´(ìƒë…„) : <%=student.getAge() %>(<jsp:getProperty name="student" property="year" />)<br> <!-- ì„í¬íŠ¸í•œ í´ë˜ìŠ¤ ê·¸ëƒ¥ ì¨ë„ ë¨ -->
+	ì•”í˜¸ : <jsp:getProperty name="student" property="pass" /><br>
+	ì „ìë©”ì¼ : <jsp:getProperty name="student" property="email" /><br>
 
 </body>
 </html>

@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>JSP 예제 : addcookie.jsp</title>
 </head>
+
 <body>
 	<h1>쿠키 만들기 예제</h1>
 	<hr>
